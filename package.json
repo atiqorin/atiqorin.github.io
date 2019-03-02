@@ -4,6 +4,10 @@
   "description": "Atiq Khan's portfolio website",
   "main": "index.html",
   "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build && next export -o docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -15,6 +19,12 @@
   "author": "Atiq Khan",
   "license": "ISC",
   "dependencies": {
-    "fullpage.js": "^3.0.4"
+    "@zeit/next-sass": "^1.0.1",
+    "animejs": "^3.0.1",
+    "next": "^8.0.3",
+    "node-sass": "^4.11.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-ga": "^2.5.7"
   }
 }

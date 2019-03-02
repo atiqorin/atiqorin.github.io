@@ -4,14 +4,6 @@ html, body{
 	background-color: #063647; 
 }
 
-a {
-  color: #00d1b2;
-}
-
-a:hover {
-  color: #00d1b2;
-}
-
 section{
 	padding-top: 3rem;
 	padding-bottom: 3rem;
@@ -34,16 +26,8 @@ section{
 	padding: 0.2rem;
 }
 
-a.nav-item {
-	color: #dfdfdf;
-}
-
-a.nav-item:hover {
-	color: #fff;
-}
-
 .avatar{
-	height:200px;
+	height: 15vh;
 	border-radius: 50%;
 }
 
@@ -106,3 +90,9 @@ a.nav-item:hover {
 	}
 
 }
+
+.p-3 {
+    padding-left: 3rem; 
+    padding-top: 3rem;
+}
+
