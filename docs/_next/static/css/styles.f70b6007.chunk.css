@@ -1,0 +1,107 @@
+@import url(https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap);
+html, body {
+  font-family: 'Indie Flower', cursive;
+  font-size: 24px;
+  color: #dfdfdf;
+  height: 100vh; }
+
+.particle-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(0deg, #063647 0%, #5331a7 66%, #972dfd 100%);
+  width: 100%;
+  height: 100%;
+  z-index: -1; }
+
+header {
+  display: flex;
+  padding-top: 1rem; }
+
+.name {
+  color: white;
+  font-weight: bold; }
+  .name:hover {
+    color: white; }
+  .name h1 {
+    font-weight: bold; }
+
+.header-filler {
+  flex-grow: 1; }
+
+.link-icons {
+  display: flex; }
+  .link-icons .icon {
+    color: white; }
+
+.icon {
+  color: white; }
+
+.skill-wrapper {
+  display: inline-block; }
+
+.nav-item {
+  padding: 0;
+  color: white; }
+
+.contact-item {
+  padding-left: 0.5rem;
+  display: inline; }
+
+.section {
+  padding-top: 0;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  padding-bottom: 1.5rem;
+  background: transparent; }
+
+.avatar {
+  height: 30vh;
+  border-radius: 50%; }
+
+.intro {
+  text-align: justify;
+  width: 100%;
+  margin: 0 auto; }
+
+.arrow-icon {
+  position: absolute;
+  top: 90vh;
+  left: 0.25rem; }
+
+.skill-name {
+  display: inline;
+  padding-left: 10px; }
+
+.skill-wrapper {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: #972dfd;
+  border-radius: 5px; }
+
+.company-logo {
+  border-radius: 50%; }
+
+.slide {
+  padding-bottom: 40px; }
+
+.experience-header {
+  padding-top: 1rem;
+  padding-bottom: 1rem; }
+
+.experiecne-text {
+  text-align: justify; }
+
+.company-name {
+  padding-bottom: 2rem; }
+
+@media screen and (max-width: 1000px) {
+  header {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem; } }
+
+@media screen and (max-width: 768px) {
+  .avatar {
+    height: 15vh; } }
+

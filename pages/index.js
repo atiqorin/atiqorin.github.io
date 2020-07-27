@@ -4,132 +4,107 @@ import Layout from '../components/Layout.js';
 import ReactGA from 'react-ga';
 import React from 'react'
 import anime from 'animejs'
+import Particles from 'react-particles-js';
+import Header from '../components/header.jsx';
+import Descriptive from '../components/descriptive.jsx';
+import Skills from '../components/skills.jsx';
+import Experience from '../components/Experience.jsx';
+import Contact from '../components/Contact.jsx';
+
 
 export default class Index extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      link_size: 110,
+    };
+    
+  }
   componentDidMount() {
     ReactGA.initialize('UA-135433826-1');
     ReactGA.pageview(window.location.pathname + window.location.search);
-  }
-
-  onLeave(index, nextIndex, direction) {
-
-    if (nextIndex.index == 1) {
-
-      anime({
-        targets: '.scrollDown',
-        translateY: 180 + '%',
-        duration: 500,
-        easing: 'easeInOutCubic',
-      });
+    if (window.innerWidth < 480) {
+      this.setState({link_size: 60})
     }
-    if (nextIndex.index == 0) {
-      anime({
-        targets: '.scrollDown',
-        translateY: [180 + '%', 0],
-        duration: 500,
-        easing: 'easeInOutCubic',
-      });
-    }
-  }
-
-  afterLoad(anchorLink, index) {
-    if (!anchorLink) {
-      anime({
-          targets: '.scrollDown',
-          translateY: [180 + '%', 0],
-          duration: 500,
-          easing: 'easeInOutCubic',
-      });
-  }
+    anime({
+      targets: '.avatar',
+      translateY: [-180 + '%',0],
+      scale: [0.2, 1],
+      duration: 1000,
+      easing: 'easeInOutCubic',
+    });
+    anime({
+      targets: '.arrow-icon',
+      translateY: [-50 + '%',0],
+      loop: true,
+      easing: 'easeInOutCubic',
+    });
   }
 
   render() {
     return (
       <Layout>
-        <header>
-          <a className="name" href="./">Atiq Khan</a>
-          <div className="wrap">
-            <div className="icons">
-              <a href="http://github.com/atiqorin" className="nav-item">
-                <span className="icon">
-                  <i className="fa fa-github"></i>
-                </span>
-              </a>
-              <a href="https://www.linkedin.com/in/atiq-khan" className="nav-item">
-                <span className="icon">
-                  <i className="fa fa-linkedin"></i>
-                </span>
-              </a>
-            </div>
-            <div className="menuIcon js-menuBtn"></div>
+        <Header />
+        <Particles 
+          className="particle-js"
+          params={{
+            particles:{
+              number:{
+                  value:80
+              },
+              color:{
+                  value:"#f9f3f4"
+              },
+              shape:{
+                  type:"circle",
+                  stroke:{
+                      width:1,
+                      color:"#ccc"
+                  },
+                  fill: {
+                    color: "#ccc"
+                  }
+              },
+              opacity:{
+                  value:0.5,
+                  random:true
+              },
+              size:{
+                  value:1
+              },
+              line_linked:{
+                  enable:true,
+                  distance:this.state.link_size,
+              },
+              move:{
+                  enable:true,
+                  speed: 1.5
+              }
+          }
+          }} />
+        <div className="slide">
+          <div className="container has-text-centered ">
+            <img className="avatar" src="../static/profile.jpg" />
           </div>
-          <nav className="global-nav">
-            <ul className="global-nav__list">
-              <li><a href="./#/home">Home</a></li>
-              <li><a href="./#about">About Me</a></li>
-              <li><a href="./#skills">Skills</a></li>
-              <li><a className="js-contact" href="./#contact">Contact</a></li>
-            </ul>
-          </nav>
-          <div className="curtain"></div>
-        </header>
-
-        <section id="section0" className="section active section-1">
-          <div className="slide p-3">
-            <div className="container has-text-centered ">
-              <img className="avatar" src="../static/profile.jpg" />
+        </div>
+        <span className="icon arrow-icon">
+          <i className="fa fa-angle-down"></i>
+        </span>
+        
+        <Descriptive description={"Hello! I am a software engineer with a passion for developing software and solving interesting problems. My journey in programming started as a developer with a focus on the end-user experience which gradually led me dive into full stack development responsible for front-end, back-end, ui development, database scripting and creating apis."} />
+      
+        <Descriptive description={"I've always considered that a specific programming language or tool doesn't limit me in my passion for developing and my love towards creativity & problem solving, so I constantly seek to learn new technologies and keep up-to-date with industry trends and new technologies."} />
+        <div className="columns is-mobile is-centered">
+            <div className="is-primary">
+              <h2>SKILLS</h2>
             </div>
-            <div className="container"><br />
-              <div className="intro">
-                <p>Hello! I am a <span style={{ color: 'rgb(92, 155, 192)' }}>software engineer</span> with an
-                    insatiable desire for developing software and solving interesting problems. My journey in
-                    programming started as a self-taught developer with a focus on the end-user experience
-                  and creating apis.</p>
-                <p>I've always considered that a specific programming language or tool doesn't limit me in my
-                    passion for developing and my love to create solutions, so I constantly seek to learn
-                      new technologies and keep up-to-date with industry trends and new technologies.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="section1" className="section section-2">
-          <div className="slide">
-            <div className="container p-3 ">
-              <div className="columns is-multiline is-desktop">
-                <div className="column">
-                  <div className="box project-text">
-                    <article>
-                      <div>
-                        <p>I am currently performing maintenance work on my site to reflect my
-                            newly developed skill set. If you would
-                            like to contact me, submit your email below and I will reach you back.
-                            Don't worry, I share your dislike for
-                                  spam and will respect the sanctity of your email address.</p>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </section>
-        <section id="section2" className="section section-3">
-          <div className="container  slide">
-            <div className="p-3 has-text-centered">
-              <h3 className="title is-3">Let's Socialize</h3>
-            </div>
-            <div className="social-container columns">
-              <div className="column has-text-centered">
-                <a target="_blank" href="https://www.linkedin.com/in/atiq-khan"><img className="" src="../static/linkedin.png"
-                  style={{ width: '50px', height: '50px' }} /></a>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section id="section3">
-        </section>
+        </div>
+        
+        <Skills />
+        
+        <Experience />
+        <Contact />
       </Layout>
     )
   }
